@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wim's Movie DB - Made with Tailwind css</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container mx-auto sticky top-0 z-50 bg-slate-500 rounded-b-lg border-b shadow-lg">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 px-4 py-4">
+            <div class="col-span-4 sm:col-span-2 lg:col-span-2">
+                <h1 class="m-0 text-white text-5xl font-bold">Wim's Movie DB</h1>
+            </div>
+            <div class="pt-2 col-span-4 sm:col-span-1">
+                <input type="text" id="search" name="search" placeholder="Search for a movie" value="pulp" class="w-full p-2 border-2 rounded-lg">
+            </div>
+            <div class="pt-2 col-span-4 sm:col-span-1">
+                <button type="submit" id="btn-submit" class="p-2 text-white w-full bg-orange-500 border-2 hover:invert rounded-lg">Search movies</button>
+            </div>
+        </div>
+
+        <div class="p-4 pt-0" id="searchheader"></div>
+    </div>
+
+    <div class="container mx-auto z-10 mb-10">
+        <div class="col pt-2 my-4" id="pagination"></div>
+        <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4" id="results"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center max-h-screen"
+        onclick="closeModalOnBackdrop(event)">
+        <div class="bg-slate-500 rounded-lg shadow-xl max-w-2xl w-full m-4 bg-gradient-to-r from-orange-500 to-slate-500">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-4 border-b">
+                <h3 class="text-lg font-semibold text-white" id="modal-title">
+                    Modal Title
+                </h3>
+                <button onclick="closeModal()" class="text-white hover:text-black focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <!-- <div class="p-4 text-gray-600 grid grid-cols-1 sm:grid-cols-2 bg-cover bg-no-repeat bg-center" id="modal-content"></div> -->
+            <div class="p-4 text-gray-600 grid grid-cols-1 sm:grid-cols-2 gap-2 bg-cover bg-no-repeat bg-left-top" id="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
